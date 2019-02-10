@@ -1,0 +1,78 @@
+﻿@page
+@model SummaryModel
+@{
+    ViewData["Title"] = "Summary";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<style>
+    #map {
+        float: left;
+        width: 700px;
+        height: 300px;
+    }
+
+    #wrapper {
+        float: left;
+        width: 100px;
+    }
+</style>
+
+
+<div id="map" style="width:100%;">
+    <img src=@Model.First_AvatarURL alt=@Model.FirstUsername style="width:25%;float:left" />
+    <table border="0" cellpadding="0" cellspacing="0" style="width:50%;float:right">
+        <tr>
+            <th>Name</th>
+            <th>Followers</th>
+            <th>Public Repos</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>@Model.First_Name</td>
+            <td>@Model.First_Followers</td>
+            <td>@Model.First_PublicRepos</td>
+            <td>@Model.First_Location</td>
+        </tr>
+    </table>
+
+</div>
+
+<div id="wrapper"></div>
+<div id="map" style="width:100%;">
+    <img src=@Model.Second_AvatarURL alt=@Model.SecondUsername style="width:25%;float:left" />
+    <table border="0" cellpadding="0" cellspacing="0" style="width:50%;float:right">
+        <tr>
+            <th>Name</th>
+            <th>Followers</th>
+            <th>Public Repos</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>@Model.Second_Name</td>
+            <td>@Model.Second_Followers</td>
+            <td>@Model.Second_PublicRepos</td>
+            <td>@Model.Second_Location</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,15 @@
+﻿@page
+@model CompareModel
+@{
+    ViewData["Title"] = "Compare";
+}
+<h2>@ViewData["Title"]</h2>
+<h4>@Model.Message</h4>
+
+<form method="get" action="/Summary" runat="server" border="0" cellpadding="0" cellspacing="0" style="width:100%;float:left">
+    <div class="input-group">
+        <input type="text" name="first_username" class="form-control" placeholder="torvalds" />
+        <input type="text" name="second_username" class="form-control" placeholder="torvalds" />
+        <input type="submit" value="Go!" class="btn btn-primary" style="background:blue;float:right" />
+    </div>
+</form>
